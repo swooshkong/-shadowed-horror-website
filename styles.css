@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blood: #990000;
+    --blood-bright: #cc0000;
+    --dark: #0a0a0a;
+    --darker: #000000;
+    --dim-red: #330000;
+    --text-grey: #c0c0c0;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--darker);
+    color: var(--text-grey);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Blood Drips Top */
+.blood-drips {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, var(--blood), transparent);
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.7;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
+    z-index: 50;
+}
+
+.logo {
+    font-family: 'Creepster', cursive;
+    color: var(--blood-bright);
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-grey);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--blood-bright);
+    text-shadow: 0 0 10px var(--blood);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, var(--dim-red), transparent 70%),
+                url('') center/cover no-repeat;
+    position: relative;
+}
+
+.title {
+    font-family: 'Creepster', cursive;
+    font-size: 5rem;
+    color: var(--blood-bright);
+    letter-spacing: 8px;
+    text-shadow: 0 0 30px var(--blood), 0 0 60px var(--blood);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { text-shadow: 0 0 30px var(--blood), 0 0 60px var(--blood); }
+    50% { text-shadow: 0 0 40px var(--blood-bright), 0 0 80px var(--blood-bright); }
+}
+
+.tagline {
+    font-size: 1.3rem;
+    margin: 1rem 0 3rem;
+    color: #888;
+    font-style: italic;
+}
+
+.blood-btn {
+    background: linear-gradient(to bottom, var(--blood-bright), var(--blood));
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 15px var(--blood);
+    transition: all 0.3s ease;
+}
+
+.blood-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--blood-bright);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dark {
+    background-color: #050505;
+}
+
+.section-title {
+    font-family: 'Creepster', cursive;
+    font-size: 2.5rem;
+    color: var(--blood-bright);
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 4px;
+}
+
+.story-box {
+    background: #111;
+    border-left: 4px solid var(--blood);
+    padding: 2.5rem;
+    font-size: 1.1rem;
+    box-shadow: inset 0 0 20px rgba(153, 0, 0, 0.2);
+}
+
+.warning {
+    margin-top: 2rem;
+    color: var(--blood-bright);
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Killer Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.killer-card {
+    background: linear-gradient(145deg, #1a0000, #0f0f0f);
+    border: 1px solid var(--dim-red);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.killer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(153, 0, 0, 0.4);
+    border-color: var(--blood-bright);
+}
+
+.killer-card h3 {
+    color: var(--blood-bright);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* Watch Box */
+.watch-box {
+    text-align: center;
+    padding: 3rem;
+    background: #111;
+    border: 1px solid var(--blood);
+}
+
+/* Popup */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.popup-overlay.hidden {
+    display: none;
+}
+
+.popup-box {
+    background: #0a0a0a;
+    border: 3px solid var(--blood);
+    padding: 3rem;
+    text-align: center;
+    max-width: 450px;
+    box-shadow: 0 0 50px var(--blood);
+}
+
+.popup-box h3 {
+    color: var(--blood-bright);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid #222;
+    color: #555;
+}
+
+.fine-print {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--blood);
+}
+
+/* Flicker Effect */
+.flicker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.03);
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.03; }
+    50% { opacity: 0; }
+    100% { opacity: 0.03; }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+/* Mute Button */
+.mute-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid var(--blood);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 300;
+    transition: all 0.3s ease;
+}
+.mute-btn:hover {
+    background: var(--blood);
+    transform: scale(1.1);
+}
+
+/* Mute Button */
+.mute-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid var(--blood);
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 300;
+    transition: all 0.3s ease;
+}
+.mute-btn:hover {
+    background: var(--blood);
+    transform: scale(1.1);
+}
+
+// Background Horror Sound
+const ambientSound = document.getElementById('ambientSound');
+const muteBtn = document.getElementById('muteBtn');
+let isMuted = false;
+
+// Start playing when user interacts (browser rule)
+enterBtn.addEventListener('click', () => {
+    if (!isMuted) {
+        ambientSound.volume = 0.15; // Quiet & creepy
+        ambientSound.play();
+    }
+});
+
+// Mute/Unmute toggle
+muteBtn.addEventListener('click', () => {
+    isMuted = !isMuted;
+    if (isMuted) {
+        ambientSound.pause();
+        muteBtn.textContent = "🔇";
+    } else {
+        ambientSound.play();
+        muteBtn.textContent = "🔊";
+    }
+);

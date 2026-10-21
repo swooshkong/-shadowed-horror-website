@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHADOWED — Slasher Horror</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Blood Drip Overlay -->
+    <div class="blood-drips"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">S H A D O W E D</div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#story">STORY</a></li>
+            <li><a href="#characters">THE KILLERS</a></li>
+            <li><a href="#watch">WATCH</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="title">THEY'RE WATCHING</h1>
+            <p class="tagline">No one hears you scream in the dark...</p>
+            <button id="enterBtn" class="blood-btn">ENTER THE DARKNESS</button>
+        </div>
+        <div class="flicker"></div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="section dark">
+        <h2 class="section-title">THE LEGEND</h2>
+        <div class="story-box">
+            <p>For decades, the silent figure has walked the abandoned corridors and foggy streets. 
+            No face. No mercy. Just the glint of steel in the moonlight.</p>
+            <p class="warning">Those who run... live longer.</p>
+        </div>
+    </section>
+
+    <!-- Killers Section -->
+    <section id="characters" class="section">
+        <h2 class="section-title">THE HUNTERS</h2>
+        <div class="cards-grid">
+            <div class="killer-card">
+                <h3>THE SHADE</h3>
+                <p>Silent. Fast. Unseen until it's too late.</p>
+            </div>
+            <div class="killer-card">
+                <h3>THE CINDER</h3>
+                <p>Scorched past recognition. Relentless fire burns within.</p>
+            </div>
+            <div class="killer-card">
+                <h3>THE GRINNER</h3>
+                <p>Smiling face, dead eyes. Fastest of them all.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch Section -->
+    <section id="watch" class="section dark">
+        <h2 class="section-title">EXPERIENCE THE TERROR</h2>
+        <div class="watch-box">
+            <p>Coming soon to screens near you...</p>
+            <button id="notifyBtn" class="blood-btn">NOTIFY ME</button>
+        </div>
+    </section>
+
+    <!-- Popup Overlay -->
+    <div id="popup" class="popup-overlay hidden">
+        <div class="popup-box">
+            <h3>👀 SOMETHING IS HERE...</h3>
+            <p id="popupText">You shouldn't have come...</p>
+            <button id="closePopup" class="blood-btn">ESCAPE</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 SHADOWED — All Rights Reserved</p>
+        <p class="fine-print">You can't hide forever.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- Horror Background Sound -->
+    <audio id="ambientSound" loop preload="auto">
+        <source src="horror-ambient.mp3" type="audio/mpeg">
+    
+
+    <button id="muteBtn" class="mute-btn">🔊</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
